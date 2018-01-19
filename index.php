@@ -53,16 +53,13 @@
 			forced_root_block: '', // Needed for 3.x
 			content_css: "css/custom_spoil.css",
 			init_instance_callback: function (editor) {
-				editor.on('click', function (e) {
-					//console.log('Element clicked:', e.target);
-				});
-				//$('.mce-tinymce').show();
-				//$(editor.getContainer()).find(".mce-path").css("display", "none");
+				$('.mce-tinymce').show();
+				$(editor.getContainer()).find(".mce-path").css("display", "none");
 			},
 			extended_valid_elements: "spoil,",
 			custom_elements: "spoil",
 			plugins: [
-				'spoil media_custom emotion  image imagetools code hr spoil',
+				'charactercount media_custom emotion  image imagetools code hr spoil',
 			],
 			toolbar1: ' media_custom emotion | bold italic underline strikethrough | alignleft aligncenter alignright | link hr superscript subscript | spoil code',
 		});

@@ -14,9 +14,11 @@ tinymce.PluginManager.add('spoil', function (editor) {
 				minHeight: editor.getParam("code_dialog_height", Math.min(tinyMCE.DOM.getViewPort().h - 200, 500)),
 			},
 			onsubmit: function (e) {
-				
-				render = '<spoil>'+e.data.spoil+'</spoil><br>';
+				var range = editor.selection.getRng().startOffset
+
+				render = '<spoil>'+e.data.spoil+'</spoil><br/> ';			
 				top.tinymce.activeEditor.insertContent(render);
+				
 			}
 		});
 	}
