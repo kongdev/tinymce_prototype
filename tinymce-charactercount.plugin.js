@@ -1,6 +1,6 @@
 tinymce.PluginManager.add('charactercount', function (editor) {
 	var _self = this;
-	var _limit = 50;
+	var _limit = 5000;
 
 	editor.on('init', function () {
 		var statusbar = editor.theme.panel && editor.theme.panel.find('#statusbar')[0];
