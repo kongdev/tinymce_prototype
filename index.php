@@ -56,8 +56,10 @@
 				$('.mce-tinymce').show();
 				$(editor.getContainer()).find(".mce-path").css("display", "none");
 			},
+			
 			extended_valid_elements: "spoil,",
 			custom_elements: "spoil",
+			
 			plugins: [
 				'charactercount media_custom emotion  image imagetools code hr spoil',
 			],
