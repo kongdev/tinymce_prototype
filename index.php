@@ -39,10 +39,12 @@
 				return true;
 			});
 		});
-
+		
 		tinymce.init({
 			//language: 'th_TH',
+			 branding: false,
 			theme: 'modern',
+      mobile: { theme: 'mobile' },
 			object_resizing: false,
 			selector: '#txtTinyMCE',
 			height: 500,
@@ -53,13 +55,13 @@
 			forced_root_block: '', // Needed for 3.x
 			content_css: "css/custom_spoil.css",
 			init_instance_callback: function (editor) {
+				
 				$('.mce-tinymce').show();
 				$(editor.getContainer()).find(".mce-path").css("display", "none");
+				
 			},
-			
 			extended_valid_elements: "spoil,",
 			custom_elements: "spoil",
-			
 			plugins: [
 				'charactercount media_custom emotion  image imagetools code hr spoil',
 			],

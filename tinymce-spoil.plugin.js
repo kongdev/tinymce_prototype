@@ -29,9 +29,46 @@ tinymce.PluginManager.add('spoil', function (editor) {
 	editor.addButton('spoil', {
 		title: 'Pantip Spoil',
 		text: 'Spoil',
-		icon: false,		
-		onclick: function () {
+		icon: false,
+//		onclick : _showDialog,
+		onPostRender: function () {
+			editor.on('click', function (e,cm,node) {
+//				console.log(top.tinymce.activeEditor.selection);
 
+			
+				var spoil = editor.dom.getParent(editor.selection.getNode(),'spoil');
+					if(spoil!== null && spoil.nodeName === 'SPOIL'){
+						//console.log('sppspspspsspsp',this);
+						console.log('SPOIL');
+						//tinymce. mceu_12
+					
+						
+					}else{
+						console.log('text');
+							//editor.controlManager.setActive('mceu_12', false);
+					}
+			});
+			
+		},
+		onclick: function(){
+			console.log(tinymce.activeEditor);
+			//editor.dom.toggleClass( editor.selection.getNode(), 'spoil' );
+            //this.active( !this.active() ); //toggle the button too
+				
+			
+			
+			
+			
+				
+			var selection = editor.selection.getNode();
+			//console.log(tinymce.activeEditor.dom.select('spoil'));
+			var xx = tinymce.activeEditor.dom.select('spoil');
+			xx.forEach(function(el){
+//				console.log(el);
+			});
+			//console.log(xx);
+			
+			//console.log(selection);
 			
 			var spoil = tinymce.activeEditor.dom.getParent(tinymce.activeEditor.selection.getNode(), 'spoil');
 			//console.log(spoil);
@@ -39,12 +76,22 @@ tinymce.PluginManager.add('spoil', function (editor) {
 			if (spoil !== null && spoil.nodeName === 'SPOIL') {
 				console.log('nonono');
 			} else {
-				render = '<spoil> ใส่ข้อความ </spoil><br/><br/> ';
+				render = '<spoil>ใส่ข้อความ</spoil><br/> ';
 				top.tinymce.activeEditor.insertContent(render);
 			}
+//			tinymce.activeEditor.dom.remove(xx[0]);
+//			console.log(tinymce.activeEditor.dom.select('spoil').length)
+//			tinymce.activeEditor.dom.remove(tinymce.activeEditor.dom.select('strong'));
+			//console.log(tinymce.activeEditor.dom.getParent(top.tinymce.activeEditor.selection.getNode(),'spoil'));
+			//console.log(top.tinymce.activeEditor.selection.getNode());
+//			if(top.tinymce.activeEditor.selection.getNode().nodeName == 'SPOIL'){
+//				console.log(editor.selection.getBookmark());
+//;			}else{
 
-
-
+//			}
+//			render = '<spoil> ใส่ข้อความ </spoil><br/><br/> ';
+//			top.tinymce.activeEditor.insertContent(render);
+		
 		},
 	});
 });
