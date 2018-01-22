@@ -53,7 +53,7 @@
 			force_p_newlines: false,
 			allow_script_urls: true,
 			forced_root_block: '', // Needed for 3.x
-			content_css: "css/custom_spoil.css",
+			content_css: "css/custom_tinymce.css",
 			init_instance_callback: function (editor) {
 				
 				$('.mce-tinymce').show();

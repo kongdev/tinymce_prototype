@@ -1,18 +1,9 @@
-/*spoil {   
-    background-position: left -3px top -3px;
-   
-    border:1px dotted #CCCCCC;
-    height:50px;
-    width:100px;
-}*/
-
 spoil{
 	padding : 20px;
     width : 80%;
 	margin-top : 20px;
     display:block;
     border: dashed 1px #E5C700;
-    
     border-radius: 6px;
     position: relative;
 }
@@ -21,12 +12,12 @@ spoil::before{
 	content: 'spoil';
     text-align: left;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.54);
-    background-color: #000000;
+    color: #E5C700;
+    background-color: #ffffff;
     line-height: 16px;
    
     position: absolute;
-    top: -8px;
+    top: -10px;
     left: 12px;
     z-index: 6;
 }
