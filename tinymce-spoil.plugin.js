@@ -1,6 +1,5 @@
 tinymce.PluginManager.add('spoil', function (editor) {
 	var _self = this;
-	var render;
 	//	var _showDialog = function () {
 	//		//console.log(top.tinymce.activeEditor);
 	//		console.log(top.tinymce.activeEditor.selection.getContent());
@@ -35,7 +34,7 @@ tinymce.PluginManager.add('spoil', function (editor) {
 			//editor.dom.toggleClass( editor.selection.getNode(), 'spoil' );
 			//this.active( !this.active() ); //toggle the button too
 			
-			var selection = editor.selection.getNode();
+			//var selection = editor.selection.getNode();
 			//console.log(tinymce.activeEditor.dom.select('spoil'));
 		
 			//console.log(selection);
@@ -46,8 +45,10 @@ tinymce.PluginManager.add('spoil', function (editor) {
 				if (spoil !== null && spoil.nodeName === 'SPOIL') {
 					console.log('nonono');
 				} else {
-					render = '<spoil>ใส่ข้อความ</spoil><br/> ';
-					top.tinymce.activeEditor.insertContent(render);
+					
+					
+					tinymce.activeEditor.insertContent('<spoil>ใส่ข้อความ</spoil><br/> ');
+					
 				}
 			}
 

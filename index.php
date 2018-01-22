@@ -65,7 +65,7 @@
 			plugins: [
 				'charactercount media_custom emotion  image imagetools code hr spoil',
 			],
-			toolbar1: ' media_custom emotion | bold italic underline strikethrough | alignleft aligncenter alignright | link hr superscript subscript | spoil code',
+			toolbar1: 'undo redo | media_custom emotion | bold italic underline strikethrough | alignleft aligncenter alignright | link hr superscript subscript | spoil code',
 		});
 
 
