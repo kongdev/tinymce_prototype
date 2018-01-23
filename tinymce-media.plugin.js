@@ -7,9 +7,9 @@ tinymce.PluginManager.add('media_custom', function (editor) {
 	var media_class = 'm';
 	editor.addButton('media_custom', {
 		title: 'Pantip Media',
-		//image: 'https://nhsbtdbe.blob.core.windows.net/umbraco-assets-careers-dev/1036/youtube-icon.gif',
-		text: 'Media',
-		icon: false,
+		image: 'https://nhsbtdbe.blob.core.windows.net/umbraco-assets-careers-dev/1036/youtube-icon.gif',
+//		text: 'Media',
+		//icon: false,
 		onclick: function () {
 			editor.windowManager.open({
 				title: 'url',
