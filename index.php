@@ -63,9 +63,9 @@
 			extended_valid_elements: "spoil,",
 			custom_elements: "spoil",
 			plugins: [
-				'charactercount media_custom emotion  image imagetools code hr spoil preview',
+				'charactercount media_custom emotion  image imagetools code hr spoil1 spoil2 preview',
 			],
-			toolbar1: 'preview undo redo | media_custom emotion | bold italic underline strikethrough | alignleft aligncenter alignright | link hr superscript subscript | spoil code',
+			toolbar1: 'preview undo redo | media_custom emotion | bold italic underline strikethrough | alignleft aligncenter alignright | link hr superscript subscript | spoil1 spoil2 code',
 		});
 
 
