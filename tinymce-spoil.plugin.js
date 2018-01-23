@@ -17,8 +17,7 @@ tinymce.PluginManager.add('spoil', function (editor) {
 					
 					if (tinymce.activeEditor.selection.isCollapsed() && e.data.spoil !== '') {
 						var spoil = tinymce.activeEditor.dom.getParent(tinymce.activeEditor.selection.getNode(), 'spoil');
-						//console.log(spoil);
-						//			//tinymce.activeEditor.dom.getParent(tinymce.activeEditor.selection.getNode(), 'spoil').nodeName === 'SPOIL'
+						
 						if (spoil !== null && spoil.nodeName === 'SPOIL') {
 							console.log('nonono');
 						} else {
