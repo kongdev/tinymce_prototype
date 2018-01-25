@@ -12,10 +12,8 @@ tinymce.PluginManager.add('media_custom', function (editor) {
 		//icon: false,
 		onclick: function () {
 			editor.windowManager.open({
-				title: 'url',
-				
+				title: 'url',	
 				body: {type: 'textbox', name: 'url', label: 'URL'},
-				
 				onsubmit: function (e) {
 					
 					if (res  = e.data.url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*v=)|(?:youtu\.be\/))([-|~_0-9A-Za-z]{11})/i)) {

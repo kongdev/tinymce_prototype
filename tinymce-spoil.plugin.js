@@ -1,3 +1,33 @@
+
+tinymce.PluginManager.add('spoil3', function (editor) {
+	var _self = this;
+	
+	editor.addButton('spoil3',{
+		title: 'Pantip Spoil',
+		text: 'Spoil3',
+		icon: false,
+		onclick : function(){
+			
+			var cnt = tinymce.activeEditor.dom.select('spoil').length
+			var str = tinymce.activeEditor.selection.getContent();
+			var spoil = tinymce.activeEditor.dom.getParent(tinymce.activeEditor.selection.getNode(), 'spoil');
+			var regex = /<spoil>(.*?)<\/spoil>/g;
+			
+			console.log(typeof spoil, spoil ,regex.test(str));
+			console.log(typeof spoil.nodeName);
+
+			//return false;
+			
+			if(regex.test(str) === false && spoil == null && spoil.nodeName !== 'SPOIL'){
+				str = (str === '')?'ใส่ข้อความ':str;
+				tinymce.activeEditor.insertContent('<spoil>'+str+'</spoil><br> ');
+				tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select('spoil')[cnt])
+			}
+			
+		}
+	})
+});
+
 tinymce.PluginManager.add('spoil2', function (editor) {
 	var _self = this;
 	editor.addButton('spoil2', {
@@ -43,12 +73,19 @@ tinymce.PluginManager.add('spoil1', function (editor) {
 		title: 'Pantip Spoil',
 		text: 'Spoil1',
 		icon: false,
+		/*onPostRender: function() {
+			
+			editor.on('NodeChange', function(e) {
+				console.log('zzzz');
+				
+			})
+		},*/
 		onclick: function () {
 			var cnt = tinymce.activeEditor.dom.select('spoil').length
-			if (tinymce.activeEditor.selection.isCollapsed()) {
-				var spoil = tinymce.activeEditor.dom.getParent(tinymce.activeEditor.selection.getNode(), 'spoil');
-				//console.log(spoil);
-				//			//tinymce.activeEditor.dom.getParent(tinymce.activeEditor.selection.getNode(), 'spoil').nodeName === 'SPOIL'
+			var spoil = tinymce.activeEditor.dom.getParent(tinymce.activeEditor.selection.getNode(), 'spoil');
+			//console.log(tinymce.activeEditor.selection.isCollapsed());
+			if (tinymce.activeEditor.selection.isCollapsed()) 
+			{
 				if (spoil !== null && spoil.nodeName === 'SPOIL') {
 					console.log('nonono');
 				} else {
@@ -62,6 +99,7 @@ tinymce.PluginManager.add('spoil1', function (editor) {
 		},
 
 	});
+
 });
 
 

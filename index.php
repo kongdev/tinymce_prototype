@@ -42,28 +42,28 @@
 		
 		tinymce.init({
 			//language: 'th_TH',
-			 branding: false,
 			theme: 'modern',
-      mobile: { theme: 'mobile' },
+			branding: false,
+			paste_as_text: true,
 			object_resizing: false,
-			selector: '#txtTinyMCE',
-			height: 500,
+      		//mobile: { theme: 'mobile' },
 			menubar: false,
 			force_br_newlines: true,
 			force_p_newlines: false,
 			allow_script_urls: true,
 			forced_root_block: '', // Needed for 3.x
+			selector: '#txtTinyMCE',
+			height: 500,
 			content_css: "css/custom_tinymce.css",
 			init_instance_callback: function (editor) {
-				
 				$('.mce-tinymce').show();
 				$(editor.getContainer()).find(".mce-path").css("display", "none");
-				
 			},
+			
 			extended_valid_elements: "spoil,",
 			custom_elements: "spoil",
 			plugins: [
-				'charactercount media_custom emotion  image imagetools code hr spoil1 spoil2 preview',
+				'charactercount media_custom emotion  image imagetools code hr spoil1 spoil2 spoil3 preview paste',
 			],
 			toolbar1: 'preview undo redo | media_custom emotion | bold italic underline strikethrough | alignleft aligncenter alignright | link hr superscript subscript | spoil1 spoil2 code',
 		});

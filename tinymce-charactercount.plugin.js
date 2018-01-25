@@ -14,7 +14,7 @@ tinymce.PluginManager.add('charactercount', function (editor) {
 				disabled: editor.settings.readonly
 			}, 0);
 
-			editor.on('KeyDown BeforeSetContent PastePreProcess PastePreProcess', function (e) {
+			editor.on('KeyDown BeforeSetContent', function (e) {
 				if (_self.getCount() > _limit && e.keyCode != 8) {
 					//console.log('z');
 					return tinymce.dom.Event.cancel(e);
